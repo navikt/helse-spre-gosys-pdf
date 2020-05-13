@@ -1,0 +1,16 @@
+{
+  "navn": "Hans Hansen",
+  "fødselsnummer": "31055023871",
+  "fagsystemId": "77ATRH3QENHB5K4XUY4LQ7HRTY",
+  "fom": "2020-04-01",
+  "tom": "2020-05-18",
+  "grad": 100,
+  "behandlingsdato": "2020-05-20",
+  "saksbehandlernavn": "Hans Hansen",
+  "arbeidsgiver": "Sykepleierhuset AS",
+  "sykepengegrunnlag": 123,
+  "avvik": 0,
+  "opptjeningsdager": 123,
+  "dagerIgjen": 123,
+  "utbetaling": 123
+}
