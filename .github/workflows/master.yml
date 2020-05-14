@@ -6,24 +6,12 @@ on:
       - master
 
 env:
-  IMAGENAME: docker.pkg.github.com/${{ github.repository }}/spre-gosys-pdf
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/spre-gosys-pdf:$(echo ${{ github.sha }} | cut -c1-7)
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Declare outputs
-        id: declare
-        run: |
-          echo "::set-output name=image::${IMAGENAME}:$(echo ${{ github.sha }} | cut -c1-7)"
-    outputs:
-      image: "${{ steps.declare.outputs.image }}"
   build:
     needs: setup
     runs-on: ubuntu-latest
-    env:
-      IMAGE: "${{ needs.setup.outputs.image }}"
     steps:
       - uses: actions/checkout@v1
       - name: build docker image
@@ -34,7 +22,7 @@ jobs:
           docker push ${IMAGE}
   deployDev:
     name: Deploy to dev
-    needs: [setup, build]
+    needs: build
     runs-on: ubuntu-latest
     env:
       IMAGE: "${{ needs.setup.outputs.image }}"
@@ -48,7 +36,7 @@ jobs:
 
   deployProd:
     name: Deploy to prod
-    needs: [setup, build, deployDev]
+    needs: [build, deployDev]
     runs-on: ubuntu-latest
     env:
       IMAGE: "${{ needs.setup.outputs.image }}"
