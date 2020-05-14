@@ -10,6 +10,7 @@ env:
 
 jobs:
   build:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -23,7 +24,10 @@ jobs:
     name: Deploy to dev
     needs: build
     runs-on: ubuntu-latest
+    env:
+      IMAGE: "${{ needs.setup.outputs.image }}"
     steps:
+      - uses: actions/checkout@v1
       - uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
@@ -34,7 +38,10 @@ jobs:
     name: Deploy to prod
     needs: [build, deployDev]
     runs-on: ubuntu-latest
+    env:
+      IMAGE: "${{ needs.setup.outputs.image }}"
     steps:
+      - uses: actions/checkout@v1
       - uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
