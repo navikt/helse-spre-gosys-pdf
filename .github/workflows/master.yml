@@ -12,8 +12,7 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - uses: actions/checkout@v1
       - name: Declare outputs
         id: declare
         run: |
@@ -26,8 +25,9 @@ jobs:
     env:
       IMAGE: "${{ needs.setup.outputs.image }}"
     steps:
+      - uses: actions/checkout@v1
       - name: build docker image
-        run: docker build . --pull -t ${IMAGE}
+        run: docker build -t ${IMAGE} .
       - name: push docker image
         run: |
           docker login --username "$GITHUB_REPOSITORY" -p ${{ secrets.GITHUB_TOKEN }} https://docker.pkg.github.com
