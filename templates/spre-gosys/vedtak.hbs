@@ -198,10 +198,10 @@
         <h2>Utbetalte perioder til nå:</h2>
         {{#each linjer }}
             <div class="behandlingsinfo__linje">
-                <h3>{{ iso_to_date this.fom }} - {{ iso_to_date this.tom }}</h3>
+                <h3>{{ iso_to_date fom }} - {{ iso_to_date tom }}</h3>
                 <div class="behandlingslinje__innhold">
-                    <p>{{ this.grad }} % sykmeldt</p>
-                    <p>Sykepengegrunnlag: {{ this.sykepengegrunnlag }} kr</p>
+                    <p>{{ grad }} % sykmeldt</p>
+                    <p>Sykepengegrunnlag: {{ sykepengegrunnlag }} kr</p>
                 </div>
             </div>
         {{/each}}
