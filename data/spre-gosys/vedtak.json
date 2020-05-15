@@ -1,16 +1,24 @@
 {
-  "navn": "Hans Hansen",
   "fødselsnummer": "31055023871",
   "fagsystemId": "77ATRH3QENHB5K4XUY4LQ7HRTY",
   "fom": "2020-04-01",
-  "tom": "2020-05-18",
-  "grad": 100,
-  "behandlingsdato": "2020-05-20",
-  "saksbehandlernavn": "Hans Hansen",
-  "arbeidsgiver": "Sykepleierhuset AS",
-  "sykepengegrunnlag": 1230,
-  "avvik": 0,
-  "opptjeningsdager": 123,
+  "tom": "2020-05-23",
+  "linjer": [
+    {
+      "grad": 100,
+      "fom": "2020-04-01",
+      "tom": "2020-05-18",
+      "sykepengegrunnlag": 1230
+    },
+    {
+      "grad": 50,
+      "fom": "2020-05-18",
+      "tom": "2020-05-23",
+      "sykepengegrunnlag": 1230
+    }
+  ],
+  "organisasjonsnummer": "876543210",
+  "behandlingsdato": "2020-05-23",
   "dagerIgjen": 123,
-  "utbetaling": 21123
+  "totaltTilUtbetaling": 21123
 }
