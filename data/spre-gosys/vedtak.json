@@ -8,17 +8,18 @@
       "grad": 100,
       "fom": "2020-04-01",
       "tom": "2020-05-18",
-      "sykepengegrunnlag": 1230
+      "beløp": 1230
     },
     {
       "grad": 50,
       "fom": "2020-05-18",
       "tom": "2020-05-23",
-      "sykepengegrunnlag": 1230
+      "beløp": 1230
     }
   ],
   "organisasjonsnummer": "876543210",
   "behandlingsdato": "2020-05-23",
   "dagerIgjen": 123,
+  "dagsats": 1230,
   "totaltTilUtbetaling": 21123
 }

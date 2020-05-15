@@ -201,7 +201,7 @@
                 <h3>{{ iso_to_date fom }} - {{ iso_to_date tom }}</h3>
                 <div class="behandlingslinje__innhold">
                     <p>{{ grad }} % sykmeldt</p>
-                    <p>Sykepengegrunnlag: {{ sykepengegrunnlag }} kr</p>
+                    <p>Beløp per dag: {{ beløp }} kr</p>
                 </div>
             </div>
         {{/each}}
@@ -220,6 +220,10 @@
             <tr>
                 <td><p>Totalt til utbetaling</p></td>
                 <td><p>{{totaltTilUtbetaling}} kr</p></td>
+            </tr>
+            <tr>
+                <td><p>Dagsats ved 100 %</p></td>
+                <td><p>{{dagsats}} kr</p></td>
             </tr>
             </tbody>
         </table>
