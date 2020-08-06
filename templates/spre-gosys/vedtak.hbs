@@ -152,7 +152,7 @@
         }
 
         .oppsummeringstabell {
-            width: 7cm;
+            width: 8cm;
         }
     </style>
 </head>
@@ -187,7 +187,7 @@
             <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
         </div>
         <div class="personinfo__verdi">
-            <h3>Dato søknaden ble behandlet</h3>
+            <h3>Sendt til utbetaling</h3>
             <p>{{ iso_to_date behandlingsdato }}</p>
         </div>
     </div>
@@ -203,6 +203,7 @@
                     <div class="behandlingslinje__innhold">
                         <p>{{ grad }} % sykmeldt</p>
                         <p>Beløp per dag: {{ beløp }} kr</p>
+                        <p>Utbetalt til: {{ capitalize mottaker }}</p>
                     </div>
                 </div>
             {{/each}}
@@ -228,6 +229,10 @@
                     <td><p>{{dagsats}} kr</p></td>
                 </tr>
             {{/if}}
+            <tr>
+                <td><p>Sykepengegrunnlag</p></td>
+                <td><p>{{sykepengegrunnlag}} kr</p></td>
+            </tr>
             </tbody>
         </table>
 </div>
