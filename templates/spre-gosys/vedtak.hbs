@@ -207,7 +207,7 @@
                 <h3>{{ iso_to_date fom }} - {{ iso_to_date tom }}</h3>
                 <div class="behandlingslinje__innhold">
                     <p>{{ grad }} % sykmeldt</p>
-                    <p>Beløp per dag: {{ beløp }} kr</p>
+                    <p>Beløp per dag: {{ currency_no beløp }} kr</p>
                     <p>Utbetalt til: {{ capitalize mottaker }}</p>
                 </div>
             </div>
@@ -250,17 +250,17 @@
         {{/if}}
         <tr>
             <td><p>Totalt til utbetaling</p></td>
-            <td><p>{{totaltTilUtbetaling}} kr</p></td>
+            <td><p>{{currency_no totaltTilUtbetaling}} kr</p></td>
         </tr>
         {{#if dagsats}}
             <tr>
                 <td><p>Dagsats ved 100 %</p></td>
-                <td><p>{{dagsats}} kr</p></td>
+                <td><p>{{currency_no dagsats}} kr</p></td>
             </tr>
         {{/if}}
         <tr>
             <td><p>Sykepengegrunnlag</p></td>
-            <td><p>{{sykepengegrunnlag}} kr</p></td>
+            <td><p>{{currency_no sykepengegrunnlag}} kr</p></td>
         </tr>
         </tbody>
     </table>
