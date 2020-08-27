@@ -141,11 +141,11 @@
 
         .behandlingsinfo {
             margin-bottom: 8mm;
-            page-break-inside: avoid;
         }
 
         .behandlingsinfo__linje {
             margin-bottom: 7mm;
+            page-break-inside: avoid;
         }
 
         .behandlingslinje__innhold {
@@ -154,7 +154,6 @@
     </style>
 </head>
 <body>
-
 <div id="footer">
     <span class="sidetall">Side <span id="pagenumber"></span> av <span id="pagecount"></span></span>
 </div>
@@ -194,23 +193,23 @@
         <h3>Annullert</h3>
         <p>{{ iso_to_nor_datetime dato }}</p>
     </div>
-
-    <hr class="strek" />
-
-    {{#if linjer}}
-        <div class="behandlingsinfo">
-            <h2>Annullerte perioder:</h2>
-            {{#each linjer }}
-                <div class="behandlingsinfo__linje">
-                    <h3>{{ iso_to_date fom }} - {{ iso_to_date tom }}</h3>
-                    <div class="behandlingslinje__innhold">
-                        <p>{{ grad }} % sykmeldt</p>
-                        <p>Beløp: {{ currency_no beløp }} kr</p>
-                    </div>
-                </div>
-            {{/each}}
-        </div>
-    {{/if}}
 </div>
+
+<hr class="strek" />
+
+{{#if linjer}}
+    <div class="behandlingsinfo">
+        <h2>Annullerte perioder:</h2>
+        {{#each linjer }}
+            <div class="behandlingsinfo__linje">
+                <h3>{{ iso_to_date fom }} - {{ iso_to_date tom }}</h3>
+                <div class="behandlingslinje__innhold">
+                    <p>{{ grad }} % sykmeldt</p>
+                    <p>Beløp: {{ currency_no beløp }} kr</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{/if}}
 </body>
 </html>
