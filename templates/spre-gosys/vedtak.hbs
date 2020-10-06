@@ -200,6 +200,14 @@
         <h3>Sendt til utbetaling</h3>
         <p>{{ iso_to_date behandlingsdato }}</p>
     </div>
+    <div class="personinfo__verdi">
+    {{#if automatiskBehandling}}
+        <h3>Automatisk behandlet</h3>
+    {{else}}
+        <h3>Behandlet av</h3>
+        <p>{{godkjentAv}}</p>
+    {{/if}}
+    </div>
 </div>
 
 <hr class="strek" />

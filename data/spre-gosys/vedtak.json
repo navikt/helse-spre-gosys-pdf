@@ -34,6 +34,8 @@
   "organisasjonsnummer": "876543210",
   "behandlingsdato": "2020-05-23",
   "dagerIgjen": 123,
+  "automatiskBehandling": false,
+  "godkjentAv": "A123456",
   "dagsats": 1230,
   "totaltTilUtbetaling": 21123,
   "sykepengegrunnlag": 1337.69,
