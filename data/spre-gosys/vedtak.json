@@ -29,6 +29,12 @@
       "grunn": "Ferie",
       "fom": "2020-04-04",
       "tom": "2020-04-06"
+    },
+    {
+      "grunn": "Avvist dag",
+      "begrunnelser": ["Etter dødsdato", "Krav til medlemskap er ikke oppfylt", "Inntektsgrunnlag under 1/2 G"],
+      "fom": "2020-06-01",
+      "tom": "2020-06-30"
     }
   ],
   "organisasjonsnummer": "876543210",
