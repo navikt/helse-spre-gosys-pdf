@@ -1,0 +1,24 @@
+{
+  "tittel": "Feriepenger utbetalt for sykepenger",
+  "oppdrag": [
+    {
+      "type": "ARBEIDSGIVER",
+      "fom": "2021-05-01",
+      "tom": "2021-05-31",
+      "mottaker": "123456789",
+      "totalbeløp": 1000,
+      "fagsystemId": "88ABRH3QENHB5K4XUY4LQ7HRTY"
+    },
+    {
+      "type": "PERSON",
+      "fom": "2021-05-01",
+      "tom": "2021-05-31",
+      "mottaker": "20046912345",
+      "totalbeløp": 420,
+      "fagsystemId": "77ATRH3QENHB5K4XUY4LQ7HRTY"
+    }
+  ],
+  "utbetalt": "2021-05-31T13:37:00",
+  "orgnummer": "123456789",
+  "fødselsnummer": "20046912345"
+}
