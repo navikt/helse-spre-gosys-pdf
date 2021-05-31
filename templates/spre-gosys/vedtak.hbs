@@ -2,7 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Sykepenger - utbetalt sykepenger i ny løsning</title>
+    {{#if type}}
+        <title>Sykepenger - {{type}} sykepenger i ny løsning</title>
+    {{else}}
+        <title>Sykepenger - utbetalt sykepenger i ny løsning</title>
+    {{/if}}
     <style>
         @page {
             size: A4 portrait;
@@ -171,8 +175,12 @@
     <span class="sidetall">Side <span id="pagenumber"></span> av <span id="pagecount"></span></span>
 </div>
 <div class="header">
-    <img class="header__navlogo" src="{{ image "Navlogo.png" }}" />
-    <h1 class="header__tittel">Sykepenger - utbetalt sykepenger i ny løsning</h1>
+    <img class="header__navlogo" src="{{ image "Navlogo.png" }}"/>
+      {{#if type}}
+            <h1 class="header__tittel">Sykepenger - {{type}} sykepenger i ny løsning</h1>
+        {{else}}
+            <h1 class="header__tittel">Sykepenger - utbetalt sykepenger i ny løsning</h1>
+        {{/if}}
 </div>
 
 <div class="personinfo">
