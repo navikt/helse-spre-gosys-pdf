@@ -46,5 +46,9 @@
   "dagsats": 1230,
   "totaltTilUtbetaling": 21123,
   "sykepengegrunnlag": 1337.69,
+  "grunnlagForSykepengegrunnlag": {
+    "123456789": 1234.56,
+    "987654321": 6543.21
+  },
   "maksdato": "2020-07-17"
 }
