@@ -282,8 +282,18 @@
             <td><p>{{currency_no totaltTilUtbetaling}} kr</p></td>
         </tr>
         <tr>
+            <td><p>Inntekter</p></td>
+            <td></td>
+        </tr>
+        {{#each sykepengegrunnlag.inntektsopplysningPerArbeidsgiver }}
+            <tr>
+                <td><p>{{@key}}</p></td>
+                <td><p>{{currency_no this}} kr</p></td>
+            </tr>
+        {{/each}}
+        <tr>
             <td><p>Sykepengegrunnlag</p></td>
-            <td><p>{{currency_no sykepengegrunnlag}} kr</p></td>
+            <td><p>{{currency_no sykepengegrunnlag.sykepengegrunnlag}} kr</p></td>
         </tr>
         </tbody>
     </table>
