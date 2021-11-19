@@ -52,6 +52,7 @@
   "dagsats": 1230,
   "totaltTilUtbetaling": 21123,
   "nettobeløp": 21123,
+  "totalbeløp": 59000,
   "sykepengegrunnlag": 1337.69,
   "grunnlagForSykepengegrunnlag": {
     "123456789": 1234.56,
