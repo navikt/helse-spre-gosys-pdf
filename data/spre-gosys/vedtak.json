@@ -16,14 +16,16 @@
       "fom": "2020-04-07",
       "tom": "2020-05-18",
       "beløp": 1230,
-      "mottaker": "arbeidsgiver"
+      "mottaker": "arbeidsgiver",
+      "totalbeløp": 51660
     },
     {
       "grad": 50,
       "fom": "2020-05-19",
       "tom": "2020-05-23",
       "beløp": 1230,
-      "mottaker": "arbeidsgiver"
+      "mottaker": "arbeidsgiver",
+      "totalbeløp": 2460
     }
   ],
   "ikkeUtbetalteDager": [

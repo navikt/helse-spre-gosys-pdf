@@ -125,25 +125,8 @@
             margin-bottom: 4mm;
         }
 
-        .behandlingsinfo {
+        .seksjon {
             margin-bottom: 8mm;
-        }
-
-        .behandlingsinfo__oppsummering {
-            margin-bottom: 8mm;
-            page-break-inside: avoid;
-        }
-
-        .behandlingsinfo__linje {
-            margin-bottom: 7mm;
-            page-break-inside: avoid;
-        }
-
-        .behandlingslinje__innhold {
-            margin-left: 5mm;
-        }
-
-        .ikke__utbetalte__perioder {
             page-break-inside: avoid;
         }
 
@@ -169,7 +152,7 @@
         }
 
         .oppsummeringstabell td:first-child {
-            vertical-align:top;
+            vertical-align: top;
             padding-left: 2mm;
         }
     </style>
@@ -239,28 +222,47 @@
 <hr class="strek"/>
 
 {{#if linjer}}
-    <div class="behandlingsinfo">
+    <div class="seksjon">
         <h3>Utbetalte perioder til nå:</h3>
-        {{#each linjer }}
-            <div class="behandlingsinfo__linje">
-                <h3>{{ iso_to_date fom }} - {{ iso_to_date tom }}</h3>
-                <div class="behandlingslinje__innhold">
-                    <p>{{ grad }} % sykmeldt</p>
-                    <p>Beløp per dag: {{ currency_no beløp }} kr</p>
-                    <p>Utbetalt til: {{ capitalize mottaker }}</p>
-                </div>
-            </div>
-        {{/each}}
+        <table class="oppsummeringstabell zebra">
+            <tbody>
+            <th>Dato</th>
+            <th>Utbetalt til</th>
+            <th>Beløp per dag</th>
+            <th>Totalt</th>
+            <th>Sykmeldt</th>
+            {{#each linjer }}
+                <tr>
+                    <td class="oppsummeringstabell__cell" width="8cm">
+                        <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell" width="4cm">
+                        <p>{{ mottaker }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell" width="4cm">
+                        <p>{{ dagsats }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell" width="3cm">
+                        <p>{{ totalbeløp }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell" width="2cm">
+                        <p>{{ grad }}</p>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
     </div>
     <hr class="strek"/>
 {{/if}}
 
 {{#if ikkeUtbetalteDager}}
-    <div class="behandlingsinfo ikke__utbetalte__perioder">
+    <div class="seksjon">
         <h3>Ikke utbetalte perioder:</h3>
         <table class="oppsummeringstabell zebra">
             <tbody>
-            <th>Dato</th><th>Merknad</th>
+            <th>Dato</th>
+            <th>Merknad</th>
             {{#each ikkeUtbetalteDager }}
                 <tr>
                     <td class="oppsummeringstabell__cell" width="6cm">
@@ -287,7 +289,7 @@
     <hr class="strek"/>
 {{/if}}
 
-<div class="behandlingsinfo__oppsummering">
+<div class="seksjon">
     <h2>Oppsummering</h2>
     <div class="oppsummerings__verdi">
         <h3>Dager igjen</h3>
