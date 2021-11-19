@@ -1,6 +1,12 @@
 {
   "fødselsnummer": "31055023871",
   "fagsystemId": "77ATRH3QENHB5K4XUY4LQ7HRTY",
+  "arbeidsgiverOppdrag": {
+    "fagsystemId": "77ATRH3QENHB5K4XUY4LQ7HRTY"
+  },
+  "personOppdrag": {
+    "fagsystemId": "88BKTFOSFGJJ98SDKF7FJHYTT6"
+  },
   "fom": "2020-04-01",
   "tom": "2020-05-23",
   "type": "utbetalt",
@@ -45,6 +51,7 @@
   "godkjentAv": "A123456",
   "dagsats": 1230,
   "totaltTilUtbetaling": 21123,
+  "nettobeløp": 21123,
   "sykepengegrunnlag": 1337.69,
   "grunnlagForSykepengegrunnlag": {
     "123456789": 1234.56,
