@@ -143,12 +143,28 @@
             margin-left: 5mm;
         }
 
+        .ikke__utbetalte__perioder {
+            page-break-inside: avoid;
+        }
+
         .oppsummeringstabell {
             width: 17cm;
+            border-collapse: collapse;
         }
 
         .oppsummerings__verdi {
             margin-bottom: 4mm;
+        }
+
+        .oppsummeringstabell tr:nth-child(even) {
+            background-color: #F1F1F1;
+        }
+
+        .oppsummeringstabell th {
+            font-weight: 300;
+        }
+        .oppsummeringstabell td {
+            vertical-align:top
         }
     </style>
 </head>
@@ -234,19 +250,27 @@
 {{/if}}
 
 {{#if ikkeUtbetalteDager}}
-    <div class="behandlingsinfo">
-        <h3>Dager som ikke er utbetalt:</h3>
+    <div class="behandlingsinfo ikke__utbetalte__perioder">
+        <h3>Ikke utbetalte perioder:</h3>
         <table class="oppsummeringstabell">
             <tbody>
+            <th>Dato</th><th>Merknad</th>
             {{#each ikkeUtbetalteDager }}
                 <tr>
-                    <td class="oppsummeringstabell__cell" width="6cm"><p>{{ iso_to_date fom }} - {{ iso_to_date
-                            tom }}</p></td>
-                    <td class="oppsummeringstabell__cell" width="3cm"><p>{{ grunn }}</p></td>
+                    <td class="oppsummeringstabell__cell" width="6cm">
+                        <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell" width="3cm">
+                        {{#if begrunnelser}}
+                            {{#each begrunnelser}}
+                                <p>{{ this }}</p>
+                            {{/each}}
+                        {{else}}
+                            <p>{{grunn}}</p>
+                        {{/if}}
+                    </td>
                     <td>
-                        {{#each begrunnelser}}
-                            <p>{{ this }}</p>
-                        {{/each}}
+
                     </td>
                 </tr>
 
