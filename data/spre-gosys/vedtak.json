@@ -39,7 +39,7 @@
     },
     {
       "grunn": "Avvist dag",
-      "begrunnelser": ["Etter dødsdato", "Krav til medlemskap er ikke oppfylt", "Inntektsgrunnlag under 1/2 G"],
+      "begrunnelser": ["Krav til 4 ukers opptjening er ikke oppfylt", "Dager etter maksdato - Personen er mellom 67 og 70 år, jf § 8-51", "Krav til minste sykepengegrunnlag er ikke oppfylt - Personen er mellom 67 og 70 år, jf § 8-51"],
       "fom": "2020-06-01",
       "tom": "2020-06-30"
     }

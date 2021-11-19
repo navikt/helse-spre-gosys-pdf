@@ -156,15 +156,21 @@
             margin-bottom: 4mm;
         }
 
-        .oppsummeringstabell tr:nth-child(even) {
+        .oppsummeringstabell.zebra tr:nth-child(even) {
             background-color: #F1F1F1;
         }
 
         .oppsummeringstabell th {
             font-weight: 300;
         }
-        .oppsummeringstabell td {
-            vertical-align:top
+
+        .oppsummeringstabell th:first-child {
+            padding-left: 2mm;
+        }
+
+        .oppsummeringstabell td:first-child {
+            vertical-align:top;
+            padding-left: 2mm;
         }
     </style>
 </head>
@@ -252,7 +258,7 @@
 {{#if ikkeUtbetalteDager}}
     <div class="behandlingsinfo ikke__utbetalte__perioder">
         <h3>Ikke utbetalte perioder:</h3>
-        <table class="oppsummeringstabell">
+        <table class="oppsummeringstabell zebra">
             <tbody>
             <th>Dato</th><th>Merknad</th>
             {{#each ikkeUtbetalteDager }}
@@ -260,7 +266,7 @@
                     <td class="oppsummeringstabell__cell" width="6cm">
                         <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
                     </td>
-                    <td class="oppsummeringstabell__cell" width="3cm">
+                    <td class="oppsummeringstabell__cell">
                         {{#if begrunnelser}}
                             {{#each begrunnelser}}
                                 <p>{{ this }}</p>
