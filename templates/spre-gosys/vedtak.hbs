@@ -32,7 +32,7 @@
 
         h2 {
             margin: 0 0 0.2cm;
-            font-size: 14pt;
+            font-size: 17pt;
             font-weight: bold;
         }
 
@@ -102,14 +102,13 @@
         }
 
         .personinfo {
-            display: inline-block;
+            display: block;
             width: 100%;
             margin-top: 0.7cm;
             margin-bottom: 4mm;
         }
 
         .personinfo__pair {
-            display: block;
             margin-bottom: 4mm;
         }
 
@@ -219,7 +218,7 @@
 
 {{#if linjer}}
     <div class="behandlingsinfo">
-        <h2>Utbetalte perioder til nå:</h2>
+        <h3>Utbetalte perioder til nå:</h3>
         {{#each linjer }}
             <div class="behandlingsinfo__linje">
                 <h3>{{ iso_to_date fom }} - {{ iso_to_date tom }}</h3>
@@ -236,12 +235,13 @@
 
 {{#if ikkeUtbetalteDager}}
     <div class="behandlingsinfo">
-        <h2>Dager som ikke er utbetalt:</h2>
+        <h3>Dager som ikke er utbetalt:</h3>
         <table class="oppsummeringstabell">
             <tbody>
             {{#each ikkeUtbetalteDager }}
                 <tr>
-                    <td class="oppsummeringstabell__cell" width="6cm"><p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p></td>
+                    <td class="oppsummeringstabell__cell" width="6cm"><p>{{ iso_to_date fom }} - {{ iso_to_date
+                            tom }}</p></td>
                     <td class="oppsummeringstabell__cell" width="3cm"><p>{{ grunn }}</p></td>
                     <td>
                         {{#each begrunnelser}}
@@ -260,14 +260,16 @@
 <div class="behandlingsinfo__oppsummering">
     <h2>Oppsummering</h2>
     <div class="oppsummerings__verdi">
-        <p>Dager igjen</p>
+        <h3>Dager igjen</h3>
         <p>{{dagerIgjen}}</p>
     </div>
     {{#if maksdato}}
-        <div class="oppsummerings__verdi"><p>Maksdato</p>
+        <div class="oppsummerings__verdi">
+            <h3>Maksdato</h3>
             <p>{{ iso_to_date maksdato }}</p></div>
     {{/if}}
-    <div class="oppsummerings__verdi"><p>Totalt utbetalt</p>
+    <div class="oppsummerings__verdi">
+        <h3>Totalt utbetalt</h3>
         <p>{{currency_no totalbeløp}} kr</p>
     </div>
     <div class="oppsummerings__verdi">
