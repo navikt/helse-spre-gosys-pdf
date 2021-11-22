@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    {{#if type}}
+        <title>Sykepenger - {{type}} sykepenger i ny løsning</title>
+    {{else}}
+        <title>Sykepenger - utbetalt sykepenger i ny løsning</title>
+    {{/if}}
+    <style>
+        @page {
+            size: A4 portrait;
+            @bottom-left {
+                content: element(footer);
+            }
+        }
+
+        * {
+            font-family: "Source Sans Pro";
+        }
+
+        img {
+            image-rendering: pixelated; /* Required for PDF/A-compliance */
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: bold;
+            font-style: normal;
+            font-size: 16pt;
+        }
+
+        h2 {
+            margin: 0 0 0.2cm;
+            font-size: 17pt;
+            font-weight: bold;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 14pt;
+            margin: 0;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        td p {
+            margin: 0.1cm 0;
+        }
+
+        .header {
+            display: block;
+            padding: 5mm;
+            background: #E0F5FB;
+        }
+
+        .header__tittel {
+            display: inline-block;
+            position: absolute;
+            top: 1.2cm;
+            left: 3cm;
+        }
+
+        .header__navlogo {
+            display: inline-block;
+            width: 2cm;
+        }
+
+        #footer {
+            position: running(footer);
+            font-size: 12pt;
+            margin-top: -13.3mm;
+            padding-left: 0.6cm;
+            border-bottom: 2px solid black;
+            height: 0.6cm;
+        }
+
+        #pagenumber:before {
+            content: counter(page);
+        }
+
+        #pagecount:before {
+            content: counter(pages)
+        }
+
+        .sidetall {
+            float: right;
+        }
+
+        .strek {
+            border: none;
+            border-top: 1px solid black;
+            margin-bottom: 11mm;
+            margin-top: 0;
+        }
+
+        .personinfo {
+            display: block;
+            width: 100%;
+            margin-top: 0.7cm;
+            margin-bottom: 11mm;
+        }
+
+        .personinfo__pair {
+            margin-bottom: 4mm;
+        }
+
+        .personinfo__pair__left {
+            float: left;
+        }
+
+        .personinfo__pair__right {
+            float: right;
+            width: 8.5cm;
+        }
+
+        .personinfo__verdi {
+            margin-bottom: 4mm;
+        }
+
+        .seksjon {
+            margin-bottom: 11mm;
+            page-break-inside: avoid;
+        }
+
+        .oppsummeringstabell {
+            width: 17cm;
+            border-collapse: collapse;
+        }
+
+        .oppsummerings__verdi {
+            margin-bottom: 4mm;
+        }
+
+        .oppsummeringstabell.zebra tr:nth-child(even) {
+            background-color: #F1F1F1;
+        }
+
+        .oppsummeringstabell th {
+            font-weight: 300;
+        }
+
+        .oppsummeringstabell th:first-child {
+            padding-left: 2mm;
+        }
+
+        .oppsummeringstabell td:first-child {
+            vertical-align: top;
+            padding-left: 2mm;
+        }
+    </style>
+</head>
+<body>
+
+<div id="footer">
+    <span class="sidetall">Side <span id="pagenumber"></span> av <span id="pagecount"></span></span>
+</div>
+<div class="header">
+    <img class="header__navlogo" src="{{ image "Navlogo.png" }}"/>
+    {{#if type}}
+        <h1 class="header__tittel">Sykepenger - {{type}} sykepenger i ny løsning</h1>
+    {{else}}
+        <h1 class="header__tittel">Sykepenger - utbetalt sykepenger i ny løsning</h1>
+    {{/if}}
+</div>
+
+<div class="personinfo">
+    <div class="personinfo__pair">
+        <div class="personinfo__pair__left">
+            <h3>Fødselsnummer</h3>
+            <p>{{ insert_at fødselsnummer 6 }}</p>
+        </div>
+        <div class="personinfo__pair__right">
+            <h3>Fagsystem ID</h3>
+            <p>{{ personOppdrag.fagsystemId }}</p>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="personinfo__pair">
+        <div class="personinfo__pair__left">
+            <h3>Arbeidsgiver</h3>
+            <p>{{ organisasjonsnummer }}</p>
+        </div>
+        <div class="personinfo__pair__right">
+            <h3>Fagsystem ID</h3>
+            <p>{{ arbeidsgiverOppdrag.fagsystemId }}</p>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="personinfo__verdi">
+        <h3>Søknadsperiode</h3>
+        <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
+    </div>
+    <div class="personinfo__pair">
+        <div class="personinfo__pair__left">
+            <h3>Totalbeløp for denne perioden</h3>
+            <p>{{ currency_no nettobeløp }} kr</p>
+        </div>
+        <div class="personinfo__pair__right">
+            <h3>Sendt til utbetaling</h3>
+            <p>{{ iso_to_date behandlingsdato }}</p>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="personinfo__verdi">
+        {{#if automatiskBehandling}}
+            <h3>Automatisk behandlet</h3>
+        {{else}}
+            <h3>Behandlet av</h3>
+            <p>{{godkjentAv}}</p>
+        {{/if}}
+    </div>
+</div>
+
+<hr class="strek"/>
+
+{{#if linjer}}
+    <div class="seksjon">
+        <h3>Utbetalte perioder til nå:</h3>
+        <table class="oppsummeringstabell zebra">
+            <tbody>
+            <th>Dato</th>
+            <th>Utbetalt til</th>
+            <th>Beløp per dag</th>
+            <th>Totalt</th>
+            <th>Sykmeldt</th>
+            {{#each linjer }}
+                <tr>
+                    <td class="oppsummeringstabell__cell" width="8cm">
+                        <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell" width="4cm">
+                        <p>{{ mottaker }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell" width="4cm">
+                        <p>{{ currency_no dagsats }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell" width="3cm">
+                        <p>{{ currency_no totalbeløp }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell" width="2cm">
+                        <p>{{ grad }}%</p>
+                    </td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <hr class="strek"/>
+{{/if}}
+
+{{#if ikkeUtbetalteDager}}
+    <div class="seksjon">
+        <h3>Ikke utbetalte perioder:</h3>
+        <table class="oppsummeringstabell zebra">
+            <tbody>
+            <th>Dato</th>
+            <th>Merknad</th>
+            {{#each ikkeUtbetalteDager }}
+                <tr>
+                    <td class="oppsummeringstabell__cell" width="6cm">
+                        <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
+                    </td>
+                    <td class="oppsummeringstabell__cell">
+                        {{#if begrunnelser}}
+                            {{#each begrunnelser}}
+                                <p>{{ this }}</p>
+                            {{/each}}
+                        {{else}}
+                            <p>{{grunn}}</p>
+                        {{/if}}
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <hr class="strek"/>
+{{/if}}
+
+<div class="seksjon">
+    <h2>Oppsummering</h2>
+    <div class="oppsummerings__verdi">
+        <h3>Dager igjen</h3>
+        <p>{{dagerIgjen}}</p>
+    </div>
+    {{#if maksdato}}
+        <div class="oppsummerings__verdi">
+            <h3>Maksdato</h3>
+            <p>{{ iso_to_date maksdato }}</p></div>
+    {{/if}}
+    <div class="oppsummerings__verdi">
+        <h3>Totalt utbetalt</h3>
+        <p>{{currency_no totalbeløp}} kr</p>
+    </div>
+    <div class="oppsummerings__verdi">
+        <h3>Omregnet årsinntekt</h3>
+        <table class="oppsummeringstabell">
+            <tbody>
+            {{#each grunnlagForSykepengegrunnlag }}
+                <tr>
+                    <td width="6cm">Orgnr. {{@key}}</td>
+                    <td>{{currency_no this}} kr</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="oppsummerings__verdi">
+        <h3>Sykepengegrunnlag</h3>
+        <p>{{currency_no sykepengegrunnlag}} kr</p>
+    </div>
+</div>
+</body>
+</html>
