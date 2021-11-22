@@ -1,0 +1,64 @@
+{
+  "fødselsnummer": "31055023871",
+  "fagsystemId": "77ATRH3QENHB5K4XUY4LQ7HRTY",
+  "arbeidsgiverOppdrag": {
+    "fagsystemId": "77ATRH3QENHB5K4XUY4LQ7HRTY"
+  },
+  "personOppdrag": {
+    "fagsystemId": "88BKTFOSFGJJ98SDKF7FJHYTT6"
+  },
+  "fom": "2020-04-01",
+  "tom": "2020-05-23",
+  "type": "utbetalt",
+  "linjer": [
+    {
+      "grad": 100,
+      "fom": "2020-04-07",
+      "tom": "2020-05-18",
+      "beløp": 1230,
+      "mottaker": "arbeidsgiver",
+      "totalbeløp": 51660
+    },
+    {
+      "grad": 50,
+      "fom": "2020-05-19",
+      "tom": "2020-05-23",
+      "beløp": 1230,
+      "mottaker": "arbeidsgiver",
+      "totalbeløp": 2460
+    }
+  ],
+  "ikkeUtbetalteDager": [
+    {
+      "grunn": "Ferie",
+      "fom": "2020-04-01",
+      "tom": "2020-04-03"
+    },
+    {
+      "grunn": "Ferie",
+      "fom": "2020-04-04",
+      "tom": "2020-04-06"
+    },
+    {
+      "grunn": "Avvist dag",
+      "begrunnelser": ["Krav til 4 ukers opptjening er ikke oppfylt", "Dager etter maksdato - Personen er mellom 67 og 70 år, jf § 8-51", "Krav til minste sykepengegrunnlag er ikke oppfylt - Personen er mellom 67 og 70 år, jf § 8-51"],
+      "fom": "2020-06-01",
+      "tom": "2020-06-30"
+    }
+  ],
+  "organisasjonsnummer": "876543210",
+  "behandlingsdato": "2020-05-23",
+  "dagerIgjen": 123,
+  "automatiskBehandling": false,
+  "godkjentAv": "A123456",
+  "dagsats": 1230,
+  "totaltTilUtbetaling": 21123,
+  "nettobeløp": 21123,
+  "totalbeløp": 59000,
+  "sykepengegrunnlag": 1337.69,
+  "grunnlagForSykepengegrunnlag": {
+    "123456789": 1234.56,
+    "987654321": 6543.21
+  },
+  "maksdato": "2020-07-17"
+}
