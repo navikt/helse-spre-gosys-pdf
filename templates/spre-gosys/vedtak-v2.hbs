@@ -201,7 +201,7 @@
     <div class="personinfo__pair">
         <div class="personinfo__pair__left">
             <h3>Totalbeløp for denne perioden</h3>
-            <p>{{ currency_no nettobeløp }} kr</p>
+            <p>{{ currency_no sumNettoBeløp }} kr</p>
         </div>
         <div class="personinfo__pair__right">
             <h3>Sendt til utbetaling</h3>
@@ -240,10 +240,10 @@
                         <p>{{ mottaker }}</p>
                     </td>
                     <td class="oppsummeringstabell__cell" width="4cm">
-                        <p>{{ currency_no dagsats }}</p>
+                        <p>{{ currency_no dagsats }} kr</p>
                     </td>
-                    <td class="oppsummeringstabell__cell" width="3cm">
-                        <p>{{ currency_no totalbeløp }}</p>
+                    <td class="oppsummeringstabell__cell" width="4cm">
+                        <p>{{ currency_no totalbeløp }} kr</p>
                     </td>
                     <td class="oppsummeringstabell__cell" width="2cm">
                         <p>{{ grad }}%</p>
@@ -302,7 +302,7 @@
     {{/if}}
     <div class="oppsummerings__verdi">
         <h3>Totalt utbetalt</h3>
-        <p>{{currency_no totalbeløp}} kr</p>
+        <p>{{currency_no sumTotalBeløp}} kr</p>
     </div>
     <div class="oppsummerings__verdi">
         <h3>Omregnet årsinntekt</h3>
