@@ -114,6 +114,7 @@
 
         .personinfo__pair__left {
             float: left;
+            width: 7cm;
         }
 
         .personinfo__pair__right {
@@ -174,24 +175,28 @@
 <div class="personinfo">
     <div class="personinfo__pair">
         <div class="personinfo__pair__left">
-            <h3>Fødselsnummer</h3>
-            <p>{{ insert_at fødselsnummer 6 }}</p>
+            <h3>Navn</h3>
+            <p>{{ navn }} ({{ insert_at fødselsnummer 6 }})</p>
         </div>
-        <div class="personinfo__pair__right">
-            <h3>Fagsystem ID</h3>
-            <p>{{ personOppdrag.fagsystemId }}</p>
-        </div>
+        {{#if personOppdrag.fagsystemId }}
+            <div class="personinfo__pair__right">
+                <h3>Fagsystem ID</h3>
+                <p>{{ personOppdrag.fagsystemId }}</p>
+            </div>
+        {{/if }}
     </div>
     <div style="clear: both;"></div>
     <div class="personinfo__pair">
         <div class="personinfo__pair__left">
             <h3>Arbeidsgiver</h3>
-            <p>{{ organisasjonsnummer }}</p>
+            <p>{{ organisasjonsnavn }} ({{ organisasjonsnummer }})</p>
         </div>
-        <div class="personinfo__pair__right">
-            <h3>Fagsystem ID</h3>
-            <p>{{ arbeidsgiverOppdrag.fagsystemId }}</p>
-        </div>
+        {{#if arbeidsgiverOppdrag.fagsystemId }}
+            <div class="personinfo__pair__right">
+                <h3>Fagsystem ID</h3>
+                <p>{{ arbeidsgiverOppdrag.fagsystemId }}</p>
+            </div>
+        {{/if}}
     </div>
     <div style="clear: both;"></div>
     <div class="personinfo__verdi">
@@ -223,7 +228,7 @@
 
 {{#if linjer}}
     <div class="seksjon">
-        <h3>Utbetalte perioder til nå:</h3>
+        <h3>Utbetalte perioder:</h3>
         <table class="oppsummeringstabell zebra">
             <tbody>
             <th>Dato</th>
