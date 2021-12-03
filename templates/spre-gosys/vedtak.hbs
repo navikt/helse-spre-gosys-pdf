@@ -229,12 +229,21 @@
         <h2>Utbetalte perioder til nå:</h2>
         {{#each linjer }}
             <div class="behandlingsinfo__linje">
-                <h3>{{ iso_to_date fom }} - {{ iso_to_date tom }}</h3>
-                <div class="behandlingslinje__innhold">
-                    <p>{{ grad }} % sykmeldt</p>
-                    <p>Beløp per dag: {{ currency_no beløp }} kr</p>
-                    <p>Utbetalt til: {{ capitalize mottaker }}</p>
-                </div>
+                {{#if erOpphørt}}
+                    <h3><s>{{ iso_to_date fom }} - {{ iso_to_date tom }}</s></h3>
+                    <div class="behandlingslinje__innhold">
+                        <p><s>{{ grad }} % sykmeldt</s></p>
+                        <p><s>Beløp per dag: {{ currency_no beløp }} kr</s></p>
+                        <p><s>Utbetalt til: {{ capitalize mottaker }}</s></p>
+                    </div>
+                {{else}}
+                    <h3>{{ iso_to_date fom }} - {{ iso_to_date tom }}</h3>
+                    <div class="behandlingslinje__innhold">
+                        <p>{{ grad }} % sykmeldt</p>
+                        <p>Beløp per dag: {{ currency_no beløp }} kr</p>
+                        <p>Utbetalt til: {{ capitalize mottaker }}</p>
+                    </div>
+                {{/if}}
             </div>
         {{/each}}
     </div>
