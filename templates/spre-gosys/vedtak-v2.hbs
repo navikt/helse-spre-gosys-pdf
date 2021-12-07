@@ -55,6 +55,10 @@
             margin: 0.1cm 0;
         }
 
+        .gjennomstrek p {
+            text-decoration: line-through
+        }
+
         .header {
             display: block;
             padding: 5mm;
@@ -237,7 +241,7 @@
             <th>Totalt</th>
             <th>Sykmeldt</th>
             {{#each linjer }}
-                <tr>
+                <tr class={{#if erOpphørt}} "gjennomstrek" {{else}} "" {{/if}} >
                     <td class="oppsummeringstabell__cell" width="8cm">
                         <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
                     </td>
@@ -248,7 +252,7 @@
                         <p>{{ currency_no dagsats }} kr</p>
                     </td>
                     <td class="oppsummeringstabell__cell" width="4cm">
-                        <p>{{ currency_no totalbeløp }} kr</p>
+                        {{#unless erOpphørt}} <p> {{ currency_no totalbeløp }} kr</p> {{/unless}}
                     </td>
                     <td class="oppsummeringstabell__cell" width="2cm">
                         <p>{{ grad }}%</p>
