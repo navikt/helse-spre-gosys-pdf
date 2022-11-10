@@ -139,6 +139,23 @@
             width: 17cm;
             border-collapse: collapse;
         }
+        .oppsummeringstabell td {
+            padding-right: 2mm;
+        }
+
+        td.mottaker {
+            max-width: 4cm;
+            width: 3cm;
+        }
+        td.mottaker p{
+            overflow: hidden;
+            white-space: nowrap;
+            width: inherit;
+        }
+
+        .høyrejustert {
+            text-align: right;
+        }
 
         .oppsummerings__verdi {
             margin-bottom: 4mm;
@@ -242,20 +259,20 @@
             <th>Sykmeldt</th>
             {{#each linjer }}
                 <tr class={{#if erOpphørt}} "gjennomstrek" {{else}} "" {{/if}} >
-                    <td class="oppsummeringstabell__cell" width="8cm">
+                    <td width="7cm">
                         <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
                     </td>
-                    <td class="oppsummeringstabell__cell" width="4cm">
+                    <td class="mottaker">
                         <p>{{ mottaker }}</p>
                     </td>
-                    <td class="oppsummeringstabell__cell" width="4cm">
+                    <td class="høyrejustert" width="4cm">
                         <p>{{ currency_no dagsats }} kr</p>
                     </td>
-                    <td class="oppsummeringstabell__cell" width="4cm">
+                    <td class="høyrejustert" width="4cm">
                         {{#unless erOpphørt}} <p> {{ currency_no totalbeløp }} kr</p> {{/unless}}
                     </td>
-                    <td class="oppsummeringstabell__cell" width="2cm">
-                        <p>{{ grad }}%</p>
+                    <td class="høyrejustert" width="2cm">
+                        <p>{{ grad }} %</p>
                     </td>
                 </tr>
             {{/each}}
@@ -274,10 +291,10 @@
             <th>Merknad</th>
             {{#each ikkeUtbetalteDager }}
                 <tr>
-                    <td class="oppsummeringstabell__cell" width="6cm">
+                    <td width="6cm">
                         <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
                     </td>
-                    <td class="oppsummeringstabell__cell">
+                    <td>
                         {{#if begrunnelser}}
                             {{#each begrunnelser}}
                                 <p>{{ this }}</p>

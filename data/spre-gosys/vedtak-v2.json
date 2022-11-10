@@ -9,7 +9,7 @@
       "tom": "2020-03-19",
       "grad": 80,
       "dagsats": 1000,
-      "mottaker": "123 456 789",
+      "mottaker": "Arbeidsgiver",
       "mottakerType": "Arbeidsgiver",
       "totalbeløp": 0,
       "erOpphørt": true
@@ -19,7 +19,7 @@
       "tom": "2018-01-31",
       "grad": 100,
       "dagsats": 741,
-      "mottaker": "123 456 789",
+      "mottaker": "Arbeidsgiver",
       "mottakerType": "Arbeidsgiver",
       "totalbeløp": 17043
     },
@@ -28,7 +28,7 @@
       "tom": "2018-01-31",
       "grad": 100,
       "dagsats": 700,
-      "mottaker": "123456 78910",
+      "mottaker": "Mia",
       "mottakerType": "Person",
       "totalbeløp": 16100
     }
