@@ -101,7 +101,7 @@
         .strek {
             border: none;
             border-top: 1px solid black;
-            margin-bottom: 11mm;
+            margin-bottom: 6mm;
             margin-top: 0;
         }
 
@@ -109,7 +109,7 @@
             display: block;
             width: 100%;
             margin-top: 0.7cm;
-            margin-bottom: 11mm;
+            margin-bottom: 6mm;
         }
 
         .personinfo__pair {
@@ -135,11 +135,18 @@
             page-break-inside: avoid;
         }
 
+        .tabelloverskrift {
+            padding-bottom: 4mm;
+        }
+
         .oppsummeringstabell {
-            width: 17cm;
+            width: 18cm;
             border-collapse: collapse;
         }
         .oppsummeringstabell td {
+            padding-right: 3mm;
+        }
+        .oppsummeringstabell td:last-child {
             padding-right: 2mm;
         }
 
@@ -176,6 +183,12 @@
         .oppsummeringstabell td:first-child {
             vertical-align: top;
             padding-left: 2mm;
+        }
+        .inline-tabell {
+            font-size: 14pt;
+        }
+        .inline-tabell table {
+            border-spacing: 0;
         }
     </style>
 </head>
@@ -249,13 +262,13 @@
 
 {{#if linjer}}
     <div class="seksjon">
-        <h3>Utbetalte perioder:</h3>
+        <h3 class="tabelloverskrift">Utbetalte perioder</h3>
         <table class="oppsummeringstabell zebra">
             <tbody>
             <th>Dato</th>
             <th>Utbetalt til</th>
             <th>Beløp per dag</th>
-            <th>Totalt</th>
+            <th>Totalbeløp</th>
             <th>Sykmeldt</th>
             {{#each linjer }}
                 <tr class={{#if erOpphørt}} "gjennomstrek" {{else}} "" {{/if}} >
@@ -284,7 +297,7 @@
 
 {{#if ikkeUtbetalteDager}}
     <div class="seksjon">
-        <h3>Ikke utbetalte perioder:</h3>
+        <h3 class="tabelloverskrift">Ikke utbetalte perioder</h3>
         <table class="oppsummeringstabell zebra">
             <tbody>
             <th>Dato</th>
@@ -330,9 +343,9 @@
         <h3>Totalt utbetalt</h3>
         <p>{{currency_no sumTotalBeløp}} kr</p>
     </div>
-    <div class="oppsummerings__verdi">
+    <div class="oppsummerings__verdi inline-tabell">
         <h3>Omregnet årsinntekt</h3>
-        <table class="oppsummeringstabell">
+        <table>
             <tbody>
             {{#each grunnlagForSykepengegrunnlag }}
                 <tr>

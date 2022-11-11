@@ -18,19 +18,19 @@
       "fom": "2018-01-01",
       "tom": "2018-01-31",
       "grad": 100,
-      "dagsats": 741,
+      "dagsats": 2369,
       "mottaker": "Arbeidsgiver",
       "mottakerType": "Arbeidsgiver",
-      "totalbeløp": 17043
+      "totalbeløp": 134919
     },
     {
       "fom": "2018-01-01",
       "tom": "2018-01-31",
       "grad": 100,
-      "dagsats": 700,
-      "mottaker": "Mia",
+      "dagsats": 2369,
+      "mottaker": "Karolius",
       "mottakerType": "Person",
-      "totalbeløp": 16100
+      "totalbeløp": 9468
     }
   ],
   "personOppdrag": {
@@ -46,7 +46,24 @@
   "godkjentAv": "Automatisk behandlet",
   "sumNettoBeløp": 33143,
   "sumTotalBeløp": 33143,
-  "ikkeUtbetalteDager": [],
+  "ikkeUtbetalteDager": [
+    {
+      "grunn": "Ferie",
+      "fom": "2020-04-01",
+      "tom": "2020-04-03"
+    },
+    {
+      "grunn": "Ferie",
+      "fom": "2020-04-04",
+      "tom": "2020-04-06"
+    },
+    {
+      "grunn": "Avvist dag",
+      "begrunnelser": ["Etter dødsdato", "Krav til medlemskap er ikke oppfylt", "Inntektsgrunnlag under 1/2 G"],
+      "fom": "2020-06-01",
+      "tom": "2020-06-30"
+    }
+  ],
   "maksdato": "2021-07-15",
   "sykepengegrunnlag": 565260.0,
   "grunnlagForSykepengegrunnlag": {
