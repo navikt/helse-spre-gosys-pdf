@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  IMAGENAME: ghcr.io/${{ github.repository }}/spre-gosys-pdf
+  BASE_IMAGENAME: ghcr.io/${{ github.repository }}/spre-gosys-pdf
 
 jobs:
   setup:
@@ -16,9 +16,10 @@ jobs:
       - name: Declare outputs
         id: declare
         run: |
-          echo "::set-output name=image::${IMAGENAME}:$(echo ${{ github.sha }} | cut -c1-7)"
+          echo "image=${BASE_IMAGENAME}:$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
     outputs:
       image: "${{ steps.declare.outputs.image }}"
+
   build:
     needs: setup
     runs-on: ubuntu-latest
@@ -32,6 +33,7 @@ jobs:
         run: |
           docker login --username "$GITHUB_REPOSITORY" -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
           docker push ${IMAGE}
+
   deployDev:
     name: Deploy to dev
     needs: [setup, build]
