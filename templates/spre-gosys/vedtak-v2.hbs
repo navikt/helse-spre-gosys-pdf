@@ -3,11 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="subject" content="{{type}} sykepenger i ny løsning"/>
-    {{#if type}}
-        <title>Sykepenger - {{type}} sykepenger i ny løsning</title>
-    {{else}}
-        <title>Sykepenger - utbetalt sykepenger i ny løsning</title>
-    {{/if}}
+    <title>Sykepenger - {{type}} sykepenger i ny løsning</title>
     <style>
         @page {
             size: A4 portrait;
@@ -196,11 +192,7 @@
 </div>
 <div class="header">
     <img class="header__navlogo" alt="Nav-logo" src="{{ image "Navlogo.png" }}"/>
-    {{#if type}}
-        <h1 class="header__tittel">Sykepenger - {{type}} sykepenger i ny løsning</h1>
-    {{else}}
-        <h1 class="header__tittel">Sykepenger - utbetalt sykepenger i ny løsning</h1>
-    {{/if}}
+    <h1 class="header__tittel">Sykepenger - {{type}} sykepenger i ny løsning</h1>
 </div>
 
 <div class="personinfo">
