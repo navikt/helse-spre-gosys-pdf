@@ -1,6 +1,6 @@
 {
   "fødselsnummer": "12345678910",
-  "type": "utbetalt",
+  "type": "utbetaling av",
   "fom": "2018-01-01",
   "tom": "2018-01-31",
   "linjer": [
