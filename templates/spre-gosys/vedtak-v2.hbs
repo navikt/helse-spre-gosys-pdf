@@ -142,15 +142,30 @@
         .oppsummeringstabell td:last-child {
             padding-right: 2mm;
         }
-
-        td.mottaker {
+        .oppsummeringstabell__dato {
+            width: 7cm;
+        }
+        .oppsummeringstabell__mottaker {
             max-width: 4cm;
             width: 3cm;
         }
-        td.mottaker p{
+        .oppsummeringstabell__mottaker p {
             overflow: hidden;
             white-space: nowrap;
             width: inherit;
+        }
+        .oppsummeringstabell__dagsats {
+            width: 4cm;
+        }
+        .oppsummeringstabell__totalbeløp {
+            width: 4cm;
+        }
+        .oppsummeringstabell__gradering {
+            width: 2cm;
+        }
+
+        .ikke-utbetalte-dager .oppsummeringstabell__dato {
+            width: 6cm;
         }
 
         .høyrejustert {
@@ -177,6 +192,11 @@
             vertical-align: top;
             padding-left: 2mm;
         }
+
+        .årsinntekt-orgnr {
+            width: 6cm;
+        }
+
         .inline-tabell {
             font-size: 14pt;
         }
@@ -260,20 +280,20 @@
             <th>Totalbeløp</th>
             <th>Sykmeldt</th>
             {{#each linjer }}
-                <tr class={{#if erOpphørt}} "gjennomstrek" {{else}} "" {{/if}} >
-                    <td width="7cm">
+                <tr {{#if erOpphørt}} class="gjennomstrek" {{/if}}>
+                    <td class="oppsummeringstabell__dato">
                         <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
                     </td>
-                    <td class="mottaker">
+                    <td class="oppsummeringstabell__mottaker">
                         <p>{{ mottaker }}</p>
                     </td>
-                    <td class="høyrejustert" width="4cm">
+                    <td class="oppsummeringstabell__dagsats høyrejustert">
                         <p>{{ currency_no dagsats }} kr</p>
                     </td>
-                    <td class="høyrejustert" width="4cm">
+                    <td class="oppsummeringstabell__totalbeløp høyrejustert">
                         {{#unless erOpphørt}} <p> {{ currency_no totalbeløp }} kr</p> {{/unless}}
                     </td>
-                    <td class="høyrejustert" width="2cm">
+                    <td class="oppsummeringstabell__gradering høyrejustert">
                         <p>{{ grad }} %</p>
                     </td>
                 </tr>
@@ -287,13 +307,13 @@
 {{#if ikkeUtbetalteDager}}
     <div class="seksjon">
         <h3 class="tabelloverskrift">Ikke utbetalte perioder</h3>
-        <table class="oppsummeringstabell zebra">
+        <table class="oppsummeringstabell zebra ikke-utbetalte-dager">
             <tbody>
             <th>Dato</th>
             <th>Merknad</th>
             {{#each ikkeUtbetalteDager }}
                 <tr>
-                    <td width="6cm">
+                    <td class="oppsummeringstabell__dato">
                         <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
                     </td>
                     <td>
@@ -338,7 +358,7 @@
             <tbody>
             {{#each grunnlagForSykepengegrunnlag }}
                 <tr>
-                    <td width="6cm">Orgnr. {{@key}}</td>
+                    <td class="årsinntekt-orgnr">Orgnr. {{@key}}</td>
                     <td>{{currency_no this}} kr</td>
                 </tr>
             {{/each}}
