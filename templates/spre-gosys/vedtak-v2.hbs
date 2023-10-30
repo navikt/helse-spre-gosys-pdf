@@ -275,11 +275,13 @@
         <h3 class="tabelloverskrift">Utbetalte perioder</h3>
         <table class="oppsummeringstabell zebra">
             <tbody>
-            <th>Dato</th>
-            <th>Utbetalt til</th>
-            <th>Beløp per dag</th>
-            <th>Totalbeløp</th>
-            <th>Sykmeldt</th>
+            <tr>
+                <th>Dato</th>
+                <th>Utbetalt til</th>
+                <th>Beløp per dag</th>
+                <th>Totalbeløp</th>
+                <th>Sykmeldt</th>
+            </tr>
             {{#each linjer }}
                 <tr {{#if erOpphørt}} class="gjennomstrek" {{/if}}>
                     <td class="oppsummeringstabell__dato">
@@ -310,8 +312,10 @@
         <h3 class="tabelloverskrift">Ikke utbetalte perioder</h3>
         <table class="oppsummeringstabell zebra ikke-utbetalte-dager">
             <tbody>
-            <th>Dato</th>
-            <th>Merknad</th>
+            <tr>
+                <th>Dato</th>
+                <th>Merknad</th>
+            </tr>
             {{#each ikkeUtbetalteDager }}
                 <tr>
                     <td class="oppsummeringstabell__dato">
