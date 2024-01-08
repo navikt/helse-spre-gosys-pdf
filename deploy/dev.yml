@@ -16,6 +16,10 @@ spec:
     path: /internal/is_ready
     initialDelay: 20
     timeout: 60
+  accessPolicy:
+    inbound:
+      rules:
+        - application: spre-gosys
   resources:
     limits:
       cpu: 2000m
