@@ -49,8 +49,16 @@
             margin: 0.1cm 0;
         }
 
+        .pre_wrap {
+            white-space: pre-wrap;
+        }
+
+        .spacing_bottom {
+            margin-bottom: 4mm;
+        }
+
         .gjennomstrek p {
-            text-decoration: line-through
+            text-decoration: line-through;
         }
 
         .header {
@@ -106,10 +114,6 @@
             margin-bottom: 6mm;
         }
 
-        .personinfo__pair {
-            margin-bottom: 4mm;
-        }
-
         .personinfo__pair__left {
             float: left;
             width: 7cm;
@@ -118,10 +122,6 @@
         .personinfo__pair__right {
             float: right;
             width: 8.5cm;
-        }
-
-        .personinfo__verdi {
-            margin-bottom: 4mm;
         }
 
         .seksjon {
@@ -173,10 +173,6 @@
             text-align: right;
         }
 
-        .oppsummerings__verdi {
-            margin-bottom: 4mm;
-        }
-
         .oppsummeringstabell.zebra tr:nth-child(even) {
             background-color: #F1F1F1;
         }
@@ -195,7 +191,7 @@
         }
 
         .årsinntekt-orgnr {
-            width: 6cm;
+            width: 7cm;
         }
 
         .inline-tabell {
@@ -217,7 +213,7 @@
 </div>
 
 <div class="personinfo">
-    <div class="personinfo__pair">
+    <div class="spacing_bottom">
         <div class="personinfo__pair__left">
             <h3>Navn</h3>
             <p>{{ navn }} ({{ insert_at fødselsnummer 6 }})</p>
@@ -230,7 +226,7 @@
         {{/if }}
     </div>
     <div style="clear: both;"></div>
-    <div class="personinfo__pair">
+    <div class="spacing_bottom">
         <div class="personinfo__pair__left">
             <h3>Arbeidsgiver</h3>
             <p>{{ organisasjonsnavn }} ({{ organisasjonsnummer }})</p>
@@ -243,11 +239,11 @@
         {{/if}}
     </div>
     <div style="clear: both;"></div>
-    <div class="personinfo__verdi">
+    <div class="spacing_bottom">
         <h3>Søknadsperiode</h3>
         <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
     </div>
-    <div class="personinfo__pair">
+    <div class="spacing_bottom">
         <div class="personinfo__pair__left">
             <h3>Totalbeløp for denne perioden</h3>
             <p>{{ currency_no sumNettoBeløp }} kr</p>
@@ -258,12 +254,17 @@
         </div>
     </div>
     <div style="clear: both;"></div>
-    <div class="personinfo__verdi">
+    <div class="spacing_bottom">
+        <h3>Skjæringstidspunkt</h3>
+        <p>{{ iso_to_date skjæringstidspunkt }}</p>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="spacing_bottom">
         {{#if automatiskBehandling}}
             <h3>Automatisk behandlet</h3>
         {{else}}
             <h3>Behandlet av</h3>
-            <p>{{godkjentAv}}</p>
+            <p>{{ godkjentAv }}</p>
         {{/if}}
     </div>
 </div>
@@ -344,36 +345,96 @@
 
 <div class="seksjon">
     <h2>Oppsummering</h2>
-    <div class="oppsummerings__verdi">
+    <div class="spacing_bottom">
         <h3>Dager igjen</h3>
         <p>{{dagerIgjen}}</p>
     </div>
     {{#if maksdato}}
-        <div class="oppsummerings__verdi">
+        <div class="spacing_bottom">
             <h3>Maksdato</h3>
             <p>{{ iso_to_date maksdato }}</p></div>
     {{/if}}
-    <div class="oppsummerings__verdi">
+    <div class="spacing_bottom">
         <h3>Totalt utbetalt</h3>
         <p>{{currency_no sumTotalBeløp}} kr</p>
     </div>
-    <div class="oppsummerings__verdi inline-tabell">
+    <div class="spacing_bottom inline-tabell">
         <h3>Omregnet årsinntekt</h3>
-        <table>
+        <table class="spacing_bottom">
             <tbody>
-            {{#each grunnlagForSykepengegrunnlag }}
+            {{#each arbeidsgivere }}
                 <tr>
-                    <td class="årsinntekt-orgnr">Orgnr. {{@key}}</td>
-                    <td>{{currency_no this}} kr</td>
+                    <td class="årsinntekt-orgnr">Orgnr. {{ organisasjonsnummer }}</td>
+                    <td>{{currency_no omregnetÅrsinntekt}} kr</td>
                 </tr>
             {{/each}}
             </tbody>
         </table>
+        <h3>Rapportert årsinntekt</h3>
+        <table class="spacing_bottom">
+            <tbody>
+            {{#each arbeidsgivere }}
+                <tr>
+                    <td class="årsinntekt-orgnr">Orgnr. {{ organisasjonsnummer }}</td>
+                    <td>{{currency_no innrapportertÅrsinntekt}} kr</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        {{#if skjønnsfastsettingtype}}
+        <h3>Skjønnsfastsatt årsinntekt</h3>
+        <table>
+            <tbody>
+            {{#each arbeidsgivere }}
+                <tr>
+                    <td class="årsinntekt-orgnr">Orgnr. {{ organisasjonsnummer }}</td>
+                    <td>{{currency_no skjønnsfastsatt}} kr</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
+        {{/if}}
     </div>
-    <div class="oppsummerings__verdi">
+    <div class="spacing_bottom">
+        <h3>Utregnet avvik</h3>
+        <p>{{formatComma avviksprosent}} %</p>
+    </div>
+    <div class="spacing_bottom">
         <h3>Sykepengegrunnlag</h3>
         <p>{{currency_no sykepengegrunnlag}} kr</p>
     </div>
 </div>
+
+{{#if skjønnsfastsettingtype}}
+<div class="seksjon">
+    <h2>Sykepengegrunnlaget er skjønnsfastsatt</h2>
+    <div class="spacing_bottom">
+        <h3>Årsak</h3>
+        <p>Skjønnsfastsettelse ved mer enn 25 % avvik (§ 8-30, andre avsnitt)</p>
+    </div>
+    <div class="spacing_bottom">
+        <h3>Type skjønnsfastsettelse</h3>
+        <p>{{ skjønnsfastsettingtype }}</p>
+    </div>
+    <div class="spacing_bottom">
+        <h3>Begrunnelse</h3>
+        {{#with begrunnelser}}
+        <p>{{breaklines begrunnelseFraMal }}</p>
+        {{/with}}
+    </div>
+    <div class="spacing_bottom">
+        <h3>Begrunnelse fra saksbehandler</h3>
+        {{#with begrunnelser}}
+        <p>{{breaklines begrunnelseFraFritekst }}</p>
+        {{/with}}
+    </div>
+    <div class="spacing_bottom">
+        <h3>Konklusjon</h3>
+        {{#with begrunnelser}}
+        <p>{{breaklines begrunnelseFraKonklusjon }}</p>
+        {{/with}}
+    </div>
+</div>
+{{/if}}
 </body>
 </html>

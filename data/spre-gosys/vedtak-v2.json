@@ -1,75 +1,67 @@
 {
-  "fødselsnummer": "12345678910",
+  "fødselsnummer": "02889298149",
   "type": "utbetaling av",
-  "fom": "2018-01-01",
-  "tom": "2018-01-31",
+  "fom": "2023-11-01",
+  "tom": "2023-11-30",
   "linjer": [
     {
-      "fom": "2020-03-06",
-      "tom": "2020-03-19",
-      "grad": 80,
-      "dagsats": 1000,
+      "fom": "2023-11-17",
+      "tom": "2023-11-30",
+      "grad": 100,
+      "dagsats": 2279,
       "mottaker": "Arbeidsgiver",
       "mottakerType": "Arbeidsgiver",
-      "totalbeløp": 0,
-      "erOpphørt": true
-    },
-    {
-      "fom": "2018-01-01",
-      "tom": "2018-01-31",
-      "grad": 100,
-      "dagsats": 2369,
-      "mottaker": "Arbeidsgiver",
-      "mottakerType": "Arbeidsgiver",
-      "totalbeløp": 134919
-    },
-    {
-      "fom": "2018-01-01",
-      "tom": "2018-01-31",
-      "grad": 100,
-      "dagsats": 2369,
-      "mottaker": "Karolius",
-      "mottakerType": "Person",
-      "totalbeløp": 9468
+      "totalbeløp": 22790,
+      "erOpphørt": false
     }
   ],
-  "personOppdrag": {
-    "fagsystemId": "88BKTFOSFGJJ98SDKF7FJHYTT6"
-  },
+  "personOppdrag": null,
   "arbeidsgiverOppdrag": {
-    "fagsystemId": "77ATRH3QENHB5K4XUY4LQ7HRTY"
+    "fagsystemId": "G2JQYR2DYZCTRJZ2Q7NZSNW7UM"
   },
-  "organisasjonsnummer": "123456789",
-  "behandlingsdato": "2018-01-31",
-  "dagerIgjen": 31,
-  "automatiskBehandling": true,
-  "godkjentAv": "Automatisk behandlet",
-  "sumNettoBeløp": 33143,
-  "sumTotalBeløp": 33143,
-  "ikkeUtbetalteDager": [
+  "organisasjonsnummer": "805824352",
+  "behandlingsdato": "2024-02-07",
+  "dagerIgjen": 238,
+  "automatiskBehandling": false,
+  "godkjentAv": "T166629",
+  "sumNettoBeløp": 22790,
+  "sumTotalBeløp": 22790,
+  "ikkeUtbetalteDager": [],
+  "maksdato": "2024-10-29",
+  "sykepengegrunnlag": 711720.0,
+  "grunnlagForSykepengegrunnlag": {
+    "805824352": 836352.0,
+    "947064649": 168276.0,
+    "967170232": 0.0
+  },
+  "navn": "Normal Muffins",
+  "organisasjonsnavn": "VEGANSK SLAKTERI",
+  "skjæringstidspunkt": "2023-11-01",
+  "avviksprosent": 47.42,
+  "skjønnsfastsettingtype": "Rapportert årsinntekt",
+  "arbeidsgivere": [
     {
-      "grunn": "Ferie",
-      "fom": "2020-04-01",
-      "tom": "2020-04-03"
+      "organisasjonsnummer": "805824352",
+      "omregnetÅrsinntekt": 360000.0,
+      "innrapportertÅrsinntekt": 836352.0,
+      "skjønnsfastsatt": 836352.0
     },
     {
-      "grunn": "Ferie",
-      "fom": "2020-04-04",
-      "tom": "2020-04-06"
+      "organisasjonsnummer": "947064649",
+      "omregnetÅrsinntekt": 168276.0,
+      "innrapportertÅrsinntekt": 168276.0,
+      "skjønnsfastsatt": 168276.0
     },
     {
-      "grunn": "Avvist dag",
-      "begrunnelser": ["Etter dødsdato", "Krav til medlemskap er ikke oppfylt", "Inntektsgrunnlag under 1/2 G"],
-      "fom": "2020-06-01",
-      "tom": "2020-06-30"
+      "organisasjonsnummer": "967170232",
+      "omregnetÅrsinntekt": 0.0,
+      "innrapportertÅrsinntekt": 0.0,
+      "skjønnsfastsatt": 0.0
     }
   ],
-  "maksdato": "2021-07-15",
-  "sykepengegrunnlag": 565260.0,
-  "grunnlagForSykepengegrunnlag": {
-    "123456789": 265260.0,
-    "987654321": 300000.21
-  },
-  "navn": "Mia Cathrine Svendsen Jensen",
-  "organisasjonsnavn": "Fiskebollefabrikken"
+  "begrunnelser": {
+    "begrunnelseFraMal": "Månedsinntekten som er oppgitt av dine arbeidsgivere på kr 44 023,00 utgjør kr 528 276,00 i årsinntekt. Denne årsinntekten avviker med mer enn 25 prosent fra inntekten som er rapportert til Skatteetaten på kr 1 004 628,00 de siste tolv månedene før måneden du ble syk.\n\nNår årsinntekten avviker med mer enn 25 prosent fra rapportert inntekt, skal NAV fastsette sykepengegrunnlaget ved skjønn ut fra den årsinntekten som kan godtgjøres på det tidspunktet du ble syk. Det fremgår av folketrygdloven § 8-30 andre ledd.",
+    "begrunnelseFraFritekst": "Dette er fritekst bla bla bla.\n\nMed linjeskifte over denne linjen, hei hallo veldig fint lang tekst ho ho ho kopierer dette for å få mere tekst kopierer dette for å få mere tekst kopierer dette for å få mere tekst.",
+    "begrunnelseFraKonklusjon": "Vi har skjønnsfastsatt årsinntekten din til 1 004 628,00 kroner."
+  }
 }
