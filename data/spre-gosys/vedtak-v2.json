@@ -39,6 +39,7 @@
   "skjæringstidspunkt": "2023-11-01",
   "avviksprosent": 47.42,
   "skjønnsfastsettingtype": "Rapportert årsinntekt",
+  "skjønnsfastsettingårsak": "Skjønnsfastsettelse ved mer enn 25 % avvik (§ 8-30 andre avsnitt)",
   "arbeidsgivere": [
     {
       "organisasjonsnummer": "805824352",

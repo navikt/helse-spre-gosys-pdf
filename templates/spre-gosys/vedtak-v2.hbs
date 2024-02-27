@@ -405,17 +405,19 @@
     </div>
 </div>
 
-{{#if skjønnsfastsettingtype}}
+{{#if skjønnsfastsettingårsak}}
 <div class="seksjon">
     <h2>Sykepengegrunnlaget er skjønnsfastsatt</h2>
     <div class="spacing_bottom">
         <h3>Årsak</h3>
-        <p>Skjønnsfastsettelse ved mer enn 25 % avvik (§ 8-30, andre avsnitt)</p>
+        <p>{{ skjønnsfastsettingårsak }}</p>
     </div>
+    {{#if skjønnsfastsettingtype}}
     <div class="spacing_bottom">
         <h3>Type skjønnsfastsettelse</h3>
         <p>{{ skjønnsfastsettingtype }}</p>
     </div>
+    {{/if}}
     <div class="spacing_bottom">
         <h3>Begrunnelse</h3>
         {{#with begrunnelser}}
