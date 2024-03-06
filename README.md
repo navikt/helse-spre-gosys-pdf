@@ -21,7 +21,7 @@ docker run \
         -e DISABLE_PDF_GET=false \
         -it \
         --rm \
-        ghcr.io/navikt/pdfgen:2.0.23
+        ghcr.io/navikt/pdfgen:2.0.25
 ```
 
 Or you can use the convenience script `./run_development.sh`
