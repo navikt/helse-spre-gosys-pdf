@@ -424,14 +424,12 @@
         <p>{{breaklines begrunnelseFraMal }}</p>
         {{/with}}
     </div>
-    {{#with begrunnelser}}
-        {{#if begrunnelseFraFritekst}}
-            <div class="spacing_bottom">
-                <h3>Begrunnelse fra saksbehandler</h3>
-                <p>{{breaklines begrunnelseFraFritekst }}</p>
-            </div>
-        {{/if}}
-    {{/with}}
+    <div class="spacing_bottom">
+        <h3>Begrunnelse fra saksbehandler</h3>
+        {{#with begrunnelser}}
+        <p>{{breaklines begrunnelseFraFritekst }}</p>
+        {{/with}}
+    </div>
     <div class="spacing_bottom">
         <h3>Konklusjon</h3>
         {{#with begrunnelser}}
