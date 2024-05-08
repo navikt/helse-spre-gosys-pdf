@@ -269,8 +269,18 @@
     </div>
 </div>
 
+{{#if avslagstype}}
 <hr class="strek"/>
+<div class="seksjon">
+    <h2>Perioden er {{ avslagstype }}</h2>
+    <div class="spacing_bottom">
+        <h3>Begrunnelse</h3>
+        <p>{{ breaklines avslagsbegrunnelse }}</p>
+    </div>
+</div>
+{{/if}}
 
+<hr class="strek"/>
 {{#if linjer}}
     <div class="seksjon">
         <h3 class="tabelloverskrift">Utbetalte perioder</h3>
