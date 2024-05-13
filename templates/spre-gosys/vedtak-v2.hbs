@@ -269,16 +269,28 @@
     </div>
 </div>
 
-{{#if avslagstype}}
+{{#with begrunnelser}}
+{{#if delvisAvslag}}
 <hr class="strek"/>
 <div class="seksjon">
-    <h2>Perioden er {{ avslagstype }}</h2>
+    <h2>Perioden er delvis innvilget</h2>
     <div class="spacing_bottom">
         <h3>Begrunnelse</h3>
-        <p>{{ breaklines avslagsbegrunnelse }}</p>
+        <p>{{ breaklines delvisAvslag }}</p>
     </div>
 </div>
 {{/if}}
+{{#if avslag}}
+<hr class="strek"/>
+<div class="seksjon">
+    <h2>Perioden er avslått</h2>
+    <div class="spacing_bottom">
+        <h3>Begrunnelse</h3>
+        <p>{{ breaklines avslag }}</p>
+    </div>
+</div>
+{{/if}}
+{{/with}}
 
 <hr class="strek"/>
 {{#if linjer}}
