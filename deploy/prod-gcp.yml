@@ -30,4 +30,4 @@ spec:
     cpuThresholdPercentage: 90
   prometheus:
     enabled: true
-    path: /prometheus
+    path: /internal/prometheus
