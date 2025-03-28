@@ -345,13 +345,9 @@
                         <p>{{ iso_to_date fom }} - {{ iso_to_date tom }}</p>
                     </td>
                     <td>
-                        {{#if begrunnelser}}
-                            {{#each begrunnelser}}
-                                <p>{{ this }}</p>
-                            {{/each}}
-                        {{else}}
-                            <p>{{grunn}}</p>
-                        {{/if}}
+                        {{#each begrunnelser}}
+                            <p>{{ this }}</p>
+                        {{/each}}
                     </td>
                     <td>
 
