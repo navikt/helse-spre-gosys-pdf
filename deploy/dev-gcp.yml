@@ -31,3 +31,7 @@ spec:
   prometheus:
     enabled: true
     path: /prometheus
+  observability:
+    logging:
+      destinations:
+        - id: elastic
