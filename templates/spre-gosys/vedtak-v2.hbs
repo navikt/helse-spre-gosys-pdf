@@ -260,13 +260,29 @@
     </div>
     <div style="clear: both;"></div>
     <div class="spacing_bottom">
-        {{#if automatiskBehandling}}
-            <h3>Automatisk behandlet</h3>
-        {{else}}
-            <h3>Behandlet av</h3>
-            <p>{{ godkjentAv }}</p>
-        {{/if}}
+        <div class="personinfo__pair__left">
+            {{#if automatiskBehandling}}
+                <h3>Automatisk behandlet</h3>
+            {{else}}
+                <h3>Behandlet av</h3>
+                <p>{{ godkjentAv }}</p>
+            {{/if}}
+        </div>
+            <div class="personinfo__pair__right">
+                {{#if totrinnsvurdertAv}}
+                <h3>Kontrollert av</h3>
+                <p>{{ totrinnsvurdertAv }}</p>
+                {{/if}}
+            </div>
     </div>
+    <div style="clear: both;"></div>
+    {{#if vedtakFattetTidspunkt}}
+        <div class="spacing_bottom">
+            <h3>Vedtak fattet</h3>
+            <p>{{iso_to_nor_datetime vedtakFattetTidspunkt}}</p>
+        </div>
+        <div style="clear: both;"></div>
+    {{/if}}
 </div>
 
 {{#with begrunnelser}}
