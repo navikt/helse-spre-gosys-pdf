@@ -18,6 +18,10 @@ spec:
     inbound:
       rules:
         - application: spre-gosys
+    outbound:
+      rules:
+        - application: logging
+          namespace: nais-system
   resources:
     limits:
       memory: 2048Mi
