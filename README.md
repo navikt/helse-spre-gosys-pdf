@@ -1,16 +1,21 @@
 [![Build status](https://github.com/navikt/spre-gosys-pdf/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)](https://github.com/navikt/spre-gosys-pdf/workflows/Deploy%20to%20dev%20and%20prod/badge.svg)
+
 # Spre gosys pdf
 
 ## Technologies & Tools
 
-* [pdfgen](https://github.com/navikt/pdfgen)
+- [pdfgen](https://github.com/navikt/pdfgen)
 
 #### Creating a docker image
+
 Creating a docker image should be as simple as `docker build -t spre-gosys-pdf .`
 
 ## Getting started
+
 ### Run in development mode
+
 To run the application with templates, data and fonts locally mounted you can use
+
 ```bash
 docker run \
         -v /full/path/to/templates:/app/templates \
@@ -35,12 +40,15 @@ The template and data directory structure both follow the `<application>/<templa
 Example url: `http://0.0.0.0:8080/api/v1/genpdf/spre-gosys/vedtak`
 
 ### Notes on developing templates on Windows
+
 It is a known issue that pdfgen's output documents look different depending on whether the template
 has `\r\n` or `\n` as line endings. Therefore, it is strongly recommended to configure Git to not convert newlines, as well as ensure that your editor ends its lines with LF (`\n`) and not CRLF (`\r\n`), as the former will accurately show what your
 templates will look like in production.
 
 ## Contact us
+
 Code and project related questions should be asked as issues on this GitHub repo.
 
 ### For NAV employees
-We are available at the Slack channel #område-helse.
+
+We are available at the Slack channel [#helseytelser](https://nav-it.slack.com/archives/CD1KVMPJ6).
