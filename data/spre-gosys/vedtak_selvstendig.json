@@ -1,0 +1,56 @@
+{
+  "fødselsnummer": "02889298149",
+  "type": "utbetaling av",
+  "fom": "2023-11-01",
+  "tom": "2023-11-30",
+  "linjer": [
+    {
+      "fom": "2023-11-17",
+      "tom": "2023-11-30",
+      "grad": 100,
+      "dagsats": 2279,
+      "mottaker": "Håvard",
+      "mottakerType": "Person",
+      "totalbeløp": 22790,
+      "erOpphørt": false
+    }
+  ],
+  "personOppdrag": null,
+  "arbeidsgiverOppdrag":  {
+    "fagsystemId": "G2JQYR2DYZCTRJZ2Q7NZSNW7UM"
+  },
+  "behandlingsdato": "2024-02-07",
+  "vedtakFattetTidspunkt": "2021-05-25T13:12:24.922420993",
+  "dagerIgjen": 238,
+  "automatiskBehandling": false,
+  "godkjentAv": "T166629",
+  "totrinnsvurdertAv": "R123456",
+  "sumNettoBeløp": 22790,
+  "sumTotalBeløp": 22790,
+  "ikkeUtbetalteDager": [],
+  "maksdato": "2024-10-29",
+  "sykepengegrunnlag": 780960.00,
+  "navn": "Normal Muffins",
+  "skjæringstidspunkt": "2023-11-01",
+  "beregningsgrunnlag": 895115.00,
+  "pensjonsgivendeInntekter": [
+    {
+      "år": 2024,
+      "inntekt": 1000000.00
+    },
+    {
+      "år": 2023,
+      "inntekt": 1000000.00
+    },
+    {
+      "år": 2022,
+      "inntekt": 1000000.00
+    }
+  ],
+  "begrunnelser": {
+    "begrunnelseFraMal": "Månedsinntekten som er oppgitt av dine arbeidsgivere på kr 44 023,00 utgjør kr 528 276,00 i årsinntekt. Denne årsinntekten avviker med mer enn 25 prosent fra inntekten som er rapportert til Skatteetaten på kr 1 004 628,00 de siste tolv månedene før måneden du ble syk.\n\nNår årsinntekten avviker med mer enn 25 prosent fra rapportert inntekt, skal NAV fastsette sykepengegrunnlaget ved skjønn ut fra den årsinntekten som kan godtgjøres på det tidspunktet du ble syk. Det fremgår av folketrygdloven § 8-30 andre ledd.",
+    "begrunnelseFraFritekst": "Dette er fritekst bla bla bla.\n\nMed linjeskifte over denne linjen, hei hallo veldig fint lang tekst ho ho ho kopierer dette for å få mere tekst kopierer dette for å få mere tekst kopierer dette for å få mere tekst.",
+    "begrunnelseFraKonklusjon": "Vi har skjønnsfastsatt årsinntekten din til 1 004 628,00 kroner.",
+    "delvisInnvilgelse": "Perioden har blitt DELVIS innvilget på bakgrunn av bla bla bla bla bla bla bla.\n\nMed linjeskifte over denne linjen, hei hallo veldig fint lang tekst ho ho ho kopierer dette for å få mere tekst kopierer dette for å få mere tekst kopierer dette for å få mere tekst."
+  }
+}
