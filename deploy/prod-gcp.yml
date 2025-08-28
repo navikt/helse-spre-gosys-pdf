@@ -34,7 +34,9 @@ spec:
   replicas:
     min: 2
     max: 12
-    cpuThresholdPercentage: 200
+    scalingStrategy:
+      cpu:
+        thresholdPercentage: 800
   prometheus:
     enabled: true
     path: /internal/prometheus
