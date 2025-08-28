@@ -26,12 +26,12 @@ spec:
     limits:
       memory: 2048Mi
     requests:
-      cpu: 200m
+      cpu: 50m
       memory: 64Mi
   replicas:
     min: 2
     max: 12
-    cpuThresholdPercentage: 90
+    cpuThresholdPercentage: 200
   prometheus:
     enabled: true
     path: /internal/prometheus
