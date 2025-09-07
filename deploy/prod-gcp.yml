@@ -29,8 +29,8 @@ spec:
     limits:
       memory: 2048Mi
     requests:
-      cpu: 50m
-      memory: 64Mi
+      cpu: 30m
+      memory: 800Mi
   replicas:
     min: 2
     max: 12
