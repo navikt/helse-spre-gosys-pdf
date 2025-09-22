@@ -38,5 +38,19 @@
     "begrunnelseFraFritekst": "Dette er fritekst bla bla bla.\n\nMed linjeskifte over denne linjen, hei hallo veldig fint lang tekst ho ho ho kopierer dette for å få mere tekst kopierer dette for å få mere tekst kopierer dette for å få mere tekst.",
     "begrunnelseFraKonklusjon": "Vi har skjønnsfastsatt årsinntekten din til 1 004 628,00 kroner.",
     "delvisInnvilgelse": "Perioden har blitt DELVIS innvilget på bakgrunn av bla bla bla bla bla bla bla.\n\nMed linjeskifte over denne linjen, hei hallo veldig fint lang tekst ho ho ho kopierer dette for å få mere tekst kopierer dette for å få mere tekst kopierer dette for å få mere tekst."
-  }
+  },
+  "pensjonsgivendeInntekter": [
+    {
+      "årstall": 2024,
+      "beløp": 600000.0
+    },
+    {
+      "årstall": 2023,
+      "beløp": 600000.1
+    },
+    {
+      "årstall": 2022,
+      "beløp": 600000.2
+    }
+  ]
 }

@@ -190,8 +190,8 @@
             padding-left: 2mm;
         }
 
-        .årsinntekt-orgnr {
-            width: 7cm;
+        .årstall-årsinntekt {
+            width: 2.5cm;
         }
 
         .inline-tabell {
@@ -391,6 +391,19 @@
     <div class="spacing_bottom">
         <h3>Totalt utbetalt</h3>
         <p>{{currency_no sumTotalBeløp}} kr</p>
+    </div>
+    <div class="spacing_bottom inline-tabell">
+        <h3>Pensjonsgivende inntekt</h3>
+        <table class="spacing_bottom">
+            <tbody>
+            {{#each pensjonsgivendeInntekter }}
+                <tr>
+                    <td class="årstall-årsinntekt">{{ årstall }}</td>
+                    <td>{{currency_no beløp}} kr</td>
+                </tr>
+            {{/each}}
+            </tbody>
+        </table>
     </div>
     <div class="spacing_bottom">
         <h3>Beregningsgrunnlag</h3>
