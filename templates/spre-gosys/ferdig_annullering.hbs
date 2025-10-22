@@ -150,7 +150,18 @@
         </div>
         <div class="personinfo_linje">
             <h3>Arbeidsgiver</h3>
-            <p>{{ organisasjonsnavn }} ({{ yrkesaktivitet }})</p>
+            {{#if yrkesaktivitetstype}}
+                {{#eq yrkesaktivitetstype "ARBEIDSTAKER"}}
+                    <p>{{ organisasjonsnavn }} ({{ organisasjonsnummer }})</p>
+                {{/eq}}
+
+                {{#eq yrkesaktivitetstype "SELVSTENDIG"}}
+                    <p>Selvstendig næringsdrivende</p>
+                {{/eq}}
+
+            {{else}}
+                <p>{{ organisasjonsnavn }} ({{ yrkesaktivitet }})</p>
+            {{/if}}
         </div>
         <div style="clear: both;"></div>
     </div>

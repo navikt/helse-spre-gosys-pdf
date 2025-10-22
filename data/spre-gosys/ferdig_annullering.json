@@ -1,6 +1,7 @@
 {
   "fødselsnummer": "31055023871",
-  "yrkesaktivitet": "876543210",
+  "yrkesaktivitetstype": "ARBEIDSTAKER",
+  "organisasjonsnummer": "123456789",
   "fom": "2020-04-07",
   "tom": "2020-05-23",
   "saksbehandlerIdent": "A123456",
