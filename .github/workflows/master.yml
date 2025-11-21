@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: nais/docker-build-push@v0
         name: Build and push image
         id: docker-build-push
@@ -31,7 +31,7 @@ jobs:
       matrix:
         cluster: [dev-gcp, prod-gcp]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: nais/deploy/actions/deploy@v2
         env:
           CLUSTER: ${{ matrix.cluster }}
