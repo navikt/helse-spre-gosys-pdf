@@ -52,5 +52,9 @@
       "årstall": 2022,
       "beløp": 600000.2
     }
-  ]
+  ],
+  "dekning": {
+    "dekningsgrad": 80,
+    "gjelderFraDag": 17
+  }
 }
